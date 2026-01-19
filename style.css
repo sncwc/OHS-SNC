@@ -1,0 +1,740 @@
+/* ===== RESET ===== */
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Cairo', sans-serif;}
+html { scroll-behavior: smooth; }
+body { background: url("images/img121.png") no-repeat center center fixed; background-size: cover; color:#fff; line-height:1.6; }
+a { text-decoration:none; }
+
+/* NAVBAR */
+.navbar { position:absolute; top:0; width:100%; z-index:2; display:flex; justify-content:space-between; align-items:center; padding:30px 80px;}
+.logo-img { width:120px; border-radius:12px;}
+.navbar ul { display:flex; gap:30px; list-style:none; }
+.navbar a { color:#fff; font-weight:600; }
+
+/* HERO */
+.hero { position:relative; height:100vh; display:flex; justify-content:center; align-items:center; text-align:center; background: url("images/img12.png") center/cover no-repeat; }
+.hero::after { content:""; position:absolute; inset:0; background: rgba(0,0,0,0.55); z-index:1; }
+.hero-content { position:relative; z-index:2; max-width:900px; padding:40px; }
+.hero-content h1 { font-size:3rem; font-weight:800; margin-bottom:15px; display:inline-block; position:relative; }
+.hero-content h1::after { content:''; display:block; width:60px; height:4px; background:#01bd81; margin:10px auto 0 auto; border-radius:2px; }
+.hero-content h2 { font-size:1.5rem; font-weight:300; margin:20px auto; max-width:900px; }
+.hero-content p { margin-top:15px; font-size:1rem; }
+
+/* SECTIONS */
+.section { padding:100px 8%; }
+.section-title { text-align:center; font-size:40px; margin-bottom:60px; position:relative;}
+.section-title::after { content:""; position:absolute; left:50%; transform:translateX(-50%); bottom:-10px; width:60px; height:3px; background-color:#01bd81; border-radius:2px; }
+
+/* نص تعريف اللجنة */
+#about p { font-size:18px; line-height:1.8; max-width:900px; margin:0 auto; text-align:center; }
+
+/* البطايق */
+.destination-grid { display:flex; flex-wrap:wrap; gap:25px; justify-content:center; margin-bottom:60px;}
+.destination-card { flex:0 1 300px; border-radius:20px; overflow:hidden; padding:20px; text-align:center; background:rgba(255,255,255,0.12); backdrop-filter:blur(10px);}
+.destination-card:hover { transform:translateY(-5px); transition: transform 0.3s; }
+.destination-card h3 { margin:15px 0 12px; font-size:24px; }
+.destination-card p { font-size:15px; opacity:0.85; margin-bottom:12px; }
+
+/* ===== جدول أعمال الندوة ===== */
+.agenda-section .agenda-card .agenda-content h3 {
+    color: #ffffff; /* لون فاتح مناسب */
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    display: inline-block;
+    position: relative;
+}
+
+/* الخط تحت h3 بطول النص فقط */
+.agenda-section .agenda-card .agenda-content h3::after {
+    content: '';
+    display: block;
+    width: 100%; /* طول الخط يساوي طول النص */
+    height: 3px;
+    background-color: #01bd81; /* نفس ثيم الموقع */
+    border-radius: 2px;
+    margin-top: 4px;
+}
+
+/* تحسين وضوح نص الفقرة */
+.agenda-section .agenda-card .agenda-content p {
+    color: #ffffffcc; /* أبيض مع شفافية أقل لتصبح واضحة */
+    font-size: 1.4rem;
+    line-height: 1.7;
+    margin-top: 8px;
+}
+/* النصوص أسفل h3 داخل جدول أعمال الندوة */
+.agenda-section .agenda-card .agenda-content p {
+    color: #333;       /* نص أوضح */
+    font-size: 1.05rem;
+    line-height: 1.8;
+    font-weight: 600;  /* Bold */
+    margin-top: 10px;
+}
+/* تحسين التعداد داخل جدول أعمال الندوة */
+.agenda-section .agenda-card .agenda-content ul {
+    list-style-type: disc; /* نقاط بدل الأرقام أو حسب رغبتك */
+    padding-left: 25px;    /* مسافة عن الحافة */
+    margin-top: 10px;
+}
+
+.agenda-section .agenda-card .agenda-content ul li {
+    font-size: 1rem;      /* حجم مناسب للقراءة */
+    color: #222;           /* نص أسود واضح */
+    font-weight: 600;      /* Bold للنقاط */
+    line-height: 1.7;      /* مسافة بين السطور لتسهيل القراءة */
+    margin-bottom: 8px;    /* مسافة بين كل نقطة */
+}
+
+
+
+/* gallery */
+.gallery-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+.gallery-box { position:relative; width:100%; aspect-ratio:1/1; overflow:hidden; border-radius:16px; }
+
+/* map */
+.map-container {
+  width: 100%;
+  height: 480px; /* يمكنك تغييره إذا احتجت أكبر */
+  border-radius: 22px;
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* التواصل */
+.contact-card { max-width:500px; margin:auto; text-align:right; display:flex; gap:20px; padding:20px; background: rgba(255,255,255,0.12); backdrop-filter:blur(14px); border-radius:20px; border:1px solid rgba(255,255,255,0.25);}
+.contact-img-wrapper img { width:160px; height:210px; border-radius:10px; object-fit:cover; border:2px solid #01bd81;}
+.contact-info h3 { font-size:18px; margin-bottom:6px; }
+.contact-info .name { font-weight:700; font-size:20px;}
+.contact-info .phone { margin-top:10px; font-size:18px;}
+.btn { display:inline-block; margin-top:15px; padding:10px 26px; border-radius:30px; border:1px solid #fff; color:#fff; transition:0.3s;}
+.btn:hover { background:#fff; color:#000; }
+
+/* تابع اللجنة */
+.social-card { display:flex; gap:30px; justify-content:center; padding:20px;}
+.social-card .social-icon img { width:60px; height:60px; object-fit:contain; }
+
+/* footer */
+.footer { text-align:center; padding:20px; margin-top:60px; font-size:14px; opacity:0.8; }
+/* ===== HERO INTRO ANIMATION (ISOLATED) ===== */
+.hero-intro {
+  display: inline-block;
+}
+
+.hero-intro h1,
+.hero-intro h2 {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.hero-intro h1 {
+  animation: introH1 0.7s ease-out forwards;
+}
+
+.hero-intro h2 {
+  animation: introH2 0.6s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+.intro-line {
+  width: 60px;
+  height: 4px;
+  background: #01bd81;
+  margin: 14px auto 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  animation: introLine 0.6s ease-out forwards;
+  animation-delay: 1.2s;
+}
+
+.agenda-card, .logistics-card {
+  background: rgba(1, 189, 129, 0.2);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  padding: 15px 20px;
+  margin: 15px auto;
+  max-width: 700px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.agenda-card:hover, .logistics-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px #01bd8166;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.card-header span {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.card-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+  margin-top: 10px;
+}
+
+.agenda-card.active .card-content,
+.logistics-card.active .card-content {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.card-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+.card-content table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.card-content p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+  
+
+.twitter-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.twitter-card {
+  flex: 0 1 360px; /* حجم موحد لكل بطاقة */
+  max-height: 500px; /* ارتفاع ثابت */
+  overflow: hidden;  /* يخفي أي شيء يزيد عن الحد */
+  background: rgba(1,189,129,0.1);
+  padding: 10px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.twitter-card blockquote {
+  margin: 0;
+  height: 100%; /* ليملأ البطاقة بالكامل */
+}
+  /* زر اللغة */
+    .language-switcher {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 999;
+      display: flex;
+      gap: 8px;
+      background: rgba(0,0,0,0.5);
+      padding: 6px 12px;
+      border-radius: 8px;
+    }
+    .lang-btn {
+      cursor: pointer;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      transition: 0.3s;
+    }
+    .lang-btn.active, .lang-btn:hover {
+      background: #01bd81;
+      color: #000;
+    }
+      /* جدول الأعمال */
+.agenda-card {
+    background: rgba(255, 255, 255, 0.9); /* أبيض شبه شفاف */
+    backdrop-filter: blur(12px); /* تأثير الزجاج */
+    border-radius: 15px; /* زوايا مستديرة */
+    padding: 20px;
+    margin: 15px auto;
+    max-width: 700px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* ظل خفيف لإبراز البطاقة */
+    cursor: pointer;
+}
+
+/* عند التحويم */
+.agenda-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+
+.twitter-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* wrapper حول كل بطاقة تويتر */
+.twitter-wrapper {
+  flex: 0 1 350px; /* حجم متوسط */
+  display: flex;
+  flex-direction: column;
+}
+
+/* بطاقة زجاجية */
+.twitter-card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.twitter-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(1,189,129,0.4);
+}
+
+/* اجعل blockquote يملأ البطاقة */
+.twitter-card blockquote {
+  margin: 0;
+}
+
+
+
+/* زر تبديل اللغة */
+.lang-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #01bd8166; /* نفس ثيم الموقع */
+  color: #fff;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.image-slider {
+  position: relative;
+  width: 100%;
+  height: 220px; /* ارتفاع البطاقة */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.image-slider img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  z-index: 0;
+}
+
+.image-slider img.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+
+
+/* النصوص داخل بطاقات جدول أعمال الندوة فقط */
+.agenda-section .agenda-card .agenda-content,
+.agenda-section .agenda-card .agenda-content h3,
+.agenda-section .agenda-card .agenda-content p,
+.agenda-section .agenda-card .agenda-content li {
+    color: #007e56ee!important; /* أخضر واضح */
+}
+/* ===== تحسينات للجوال ===== */
+@media (max-width: 1024px) {
+  .navbar {
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  /* أقسام البطائق */
+  .destination-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .destination-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  /* معرض الصور */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  /* جدول الأعمال */
+  .agenda-section {
+    padding: 40px 15px;
+  }
+
+  .agenda-card {
+    padding: 18px 20px;
+    max-width: 100%;
+  }
+
+  .agenda-card .agenda-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .agenda-card .agenda-content p {
+    font-size: 1rem;
+  }
+
+  .agenda-card .agenda-content ul li {
+    font-size: 0.95rem;
+  }
+
+  /* الصور المتغيرة */
+  .image-slider {
+    height: 180px; /* أصغر على الجوال */
+  }
+
+  /* البطاقات تويتر */
+  .twitter-cards {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .twitter-card {
+    max-width: 100%;
+  }
+
+  /* map */
+  .map-container {
+    height: 300px;
+  }
+
+  /* hero */
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.1rem;
+  }
+
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+
+  /* الأزرار */
+  .btn {
+    padding: 8px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* معرض الصور للجوال الصغير */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  /* جدول الأعمال */
+  .agenda-card .agenda-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .agenda-card .agenda-content p {
+    font-size: 0.95rem;
+  }
+
+  .agenda-card .agenda-content ul li {
+    font-size: 0.9rem;
+  }
+
+  /* الصور المتغيرة أصغر */
+  .image-slider {
+    height: 150px;
+  }
+
+  /* navbar أصغر */
+  .navbar {
+    padding: 15px;
+  }
+}
+
+/* ================= مؤتمر سوق العمل ================= */
+.ilm-section {
+  padding: 80px 5%;
+}
+
+.ilm-container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.ilm-content {
+  flex: 1;
+  text-align: right;
+}
+
+.ilm-title {
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--green);
+  margin-bottom: 10px;
+}
+
+.ilm-subtitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.ilm-date {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.ilm-date span {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.ilm-location {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.ilm-desc {
+  line-height: 1.9;
+  color: #ddd;
+}
+
+.ilm-image {
+  flex: 1;
+  position: relative;
+}
+
+.ilm-image img {
+  width: 100%;
+  height: 380px; /* كان 420 */
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+
+/* زر موقع المؤتمر */
+.ilm-btn {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+
+  background-color: #036d56;   /* أخضر داكن */
+  color: #ffffff;
+
+  padding: 10px 22px;
+  border-radius: 30px;
+
+  font-weight: 800;
+  font-size: 14px;
+
+  text-decoration: none;
+  transition: background-color 0.25s ease;
+}
+
+/* تمييز بسيط عند المرور */
+.ilm-btn:hover {
+  background-color: #1ab399;   /* أخضر أفتح */
+}
+
+
+
+/* استجابة للجوال */
+@media (max-width: 900px) {
+  .ilm-container {
+    flex-direction: column;
+  }
+
+  .ilm-image img {
+    height: 300px;
+  }
+}
+
+/* ===== فاصل أقسام حقيقي ===== */
+.section-hr {
+  border: none;
+  height: 4px;
+  width: 120px;
+  background-color: var(--green);
+  margin: 80px auto;
+  border-radius: 10px;
+}
+
+/* للجوال */
+@media (max-width: 768px) {
+  .section-hr {
+    width: 90px;
+    height: 3px;
+    margin: 50px auto;
+  }
+}
+
+/* ===== الضيافة والخدمات ===== */
+/* ===== بطاقة المزيد من الوجهات زجاجية ===== */
+.more-destinations-glass {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.more-destinations-glass .destination-card {
+  max-width: 320px;
+  background: rgba(255, 255, 255, 0.08); /* نفس طابع الزجاج */
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+.more-destinations-glass h3 {
+  color: #ffffff;
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+.more-destinations-glass p {
+  color: #ffffff;
+  font-size: 14px;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+/* الزر مثل زر البطايق العادي */
+.more-destinations-glass .btn {
+  padding: 10px 20px;
+  background-color: var(--green);
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.more-destinations-glass .btn:hover {
+  background-color: #036d56; /* أخضر أغمق عند التحويم */
+}
+
+/* للجوال */
+@media (max-width: 768px) {
+  .more-destinations-glass {
+    justify-content: center;
+    padding: 0 10px;
+  }
+}
+
+.more-destinations-glass {
+  display: flex;
+  flex-wrap: wrap; /* تسمح بالانخفاض على الموبايل */
+  justify-content: center;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.more-destinations-glass .destination-card {
+  max-width: 280px; /* حجم مماثل لبطاقات الوجهات */
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: left;
+  backdrop-filter: blur(8px);
+  border: 2px solid hsl(157, 86%, 29%); /* نفس أطراف بطاقات الضيافة */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.more-destinations-glass .hospitality-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.more-destinations-glass .hospitality-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.more-destinations-glass h3 {
+  color: #ffffff;
+  font-size: 18px;
+  margin: 0;
+}
+
+.more-destinations-glass p {
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.more-destinations-glass .btn {
+  margin-top: 12px;
+  padding: 8px 16px;
+  background-color: hsl;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.more-destinations-glass .btn:hover {
+  background-color: #1ab399;
+}
+
+/* استجابة الموبايل */
+@media screen and (max-width: 768px) {
+  .more-destinations-glass {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
