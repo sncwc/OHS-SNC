@@ -768,5 +768,33 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+
+  .hero {
+    display: flex;
+    align-items: center;   
+    justify-content: center;
+    text-align: center;
+
+    min-height: 70svh;         
+    padding: 60px 20px;       
+    
+    background-size: cover;
+    background-position: center center; 
+  }
+
+  .hero-content {
+    padding: 20px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    background-position: center top;
+  }
+}
+
+
 
 
