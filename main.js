@@ -91,7 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
 document.addEventListener("DOMContentLoaded", () => {
   const statusPopup = document.getElementById("statusPopup");
   const closeBtn = document.getElementById("closePopupBtn");
@@ -100,3 +99,5 @@ document.addEventListener("DOMContentLoaded", () => {
     statusPopup.style.display = "none";
   });
 });
+
+
