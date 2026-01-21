@@ -831,36 +831,37 @@ agenda-card:hover {
   transform: translateX(-50%);
   background: rgba(1,189,129,0.9);
   color: #fff;
-  padding: 12px 18px;
+  padding: 10px 14px;    
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-width: 250px;
-  max-width: 90%;
+  max-width: 90%;           
+  width: auto;          
   z-index: 9999;
   flex-wrap: wrap;
+  font-size: 0.95rem;    
 }
 
 .status-popup button {
   background: transparent;
   border: none;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.1rem;       
   cursor: pointer;
-  margin-left: 10px;
+  margin-left: 8px;
 }
 
-
-@media (max-width: 600px) {
-  .countdown-glass {
-    font-size: 1.2rem;
-    padding: 8px 12px;
-  }
-
+@media (max-width: 400px) {
   .status-popup {
-    font-size: 0.9rem;
-    padding: 8px 12px;
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+
+  .status-popup button {
+    font-size: 1rem;
   }
 }
+
+
 
