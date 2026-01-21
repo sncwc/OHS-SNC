@@ -1,23 +1,100 @@
-function autoSlideImages() {
-  const sliders = document.querySelectorAll('.image-slider');
+document.addEventListener("DOMContentLoaded", () => {
+  // ===== سلايدر الصور =====
+  function autoSlideImages() {
+    const sliders = document.querySelectorAll('.image-slider');
 
-  sliders.forEach(slider => {
-    const images = slider.querySelectorAll('img');
-    if (images.length <= 1) return;
+    sliders.forEach(slider => {
+      const images = slider.querySelectorAll('img');
+      if (images.length <= 1) return;
 
-    let current = 0;
+      let current = 0;
+      images.forEach((img, i) => img.classList.toggle('active', i === 0));
 
-    // تأكد أن الصورة الأولى فعالة عند التحميل
-    images.forEach((img, i) => {
-      img.classList.toggle('active', i === 0);
+      setInterval(() => {
+        images[current].classList.remove('active');
+        current = (current + 1) % images.length;
+        images[current].classList.add('active');
+      }, 3000);
     });
+  }
+  autoSlideImages();
+document.addEventListener("DOMContentLoaded", () => {
+  const countdownEl = document.getElementById("countdown");
+  const statusPopup = document.getElementById("statusPopup");
+  const statusText = document.getElementById("statusText");
 
-    setInterval(() => {
-      images[current].classList.remove('active');
-      current = (current + 1) % images.length;
-      images[current].classList.add('active');
-    }, 3000);
-  });
+ document.addEventListener("DOMContentLoaded", () => {
+  const countdownEl = document.getElementById("countdown");
+
+  const eventDate = new Date(new Date().getFullYear(), new Date().getMonth(), 25, 12, 30, 0).getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const diff = eventDate - now;
+
+    if (diff <= 0) {
+      countdownEl.innerText = "بدأت الندوة الآن";
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    countdownEl.innerText = `تبقّى ${days} يوم • ${hours} ساعة • ${minutes} دقيقة • ${seconds} ثانية`;
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+});
+
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    countdownEl.innerText = `تبقّى ${days} يوم • ${hours} ساعة • ${minutes} دقيقة • ${seconds} ثانية`;
+  }
+
+  // ===== تحديث حالة الرسالة =====
+  function updateLiveStatus() {
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+    if (today < new Date(now.getFullYear(), now.getMonth(), 25)) {
+      // قبل يوم الحدث
+      statusText.innerText = "ستبدأ التنبيهات الحية للبرنامج يوم 25، تأكدوا من متابعة التحديثات خلال الندوة";
+      statusPopup.style.display = "flex";
+      return;
+    }
+
+    // يوم الحدث: تحديث حسب الوقت
+    const time = now.getHours() + now.getMinutes() / 60;
+    let status = "";
+
+    if (time < 12.5) status = "الآن: استقبال الحضور";
+    else if (time < 13) status = "الآن: الافتتاح";
+    else if (time < 13.25) status = "الآن: الجلسة الأولى";
+    else if (time < 14.20) status = "الآن: الجلسة الثانية";
+    else if (time < 16.15) status = "الآن: عروض فنية";
+    else if (time < 16.55) status = "الآن: الختام";
+    else status = "انتهت الندوة";
+
+    statusText.innerText = status;
+    statusPopup.style.display = "flex";
+  }
+
+  // تشغيل التحديثات
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  updateLiveStatus();
+  setInterval(updateLiveStatus, 60000);
+});
+
+// دالة إغلاق الرسالة
+function closeStatus() {
+  document.getElementById("statusPopup").style.display = "none";
 }
-
-document.addEventListener('DOMContentLoaded', autoSlideImages);
