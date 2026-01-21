@@ -47,57 +47,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateCountdown();
   setInterval(updateCountdown, 1000);
-});
-
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-
-    countdownEl.innerText = `تبقّى ${days} يوم • ${hours} ساعة • ${minutes} دقيقة • ${seconds} ثانية`;
-  }
-
-  function updateLiveStatus() {
-    const now = new Date();
-    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-
-    if (today < new Date(now.getFullYear(), now.getMonth(), 25)) {
-      statusText.innerText = "ستبدأ التنبيهات الحية للبرنامج يوم 25، تأكدوا من متابعة التحديثات خلال الندوة";
-      statusPopup.style.display = "flex";
-      return;
-    }
-
-    const time = now.getHours() + now.getMinutes() / 60;
-    let status = "";
-
-    if (time < 12.5) status = "الآن: استقبال الحضور";
-    else if (time < 13) status = "الآن: الافتتاح";
-    else if (time < 13.25) status = "الآن: الجلسة الأولى";
-    else if (time < 14.20) status = "الآن: الجلسة الثانية";
-    else if (time < 16.15) status = "الآن: عروض فنية";
-    else if (time < 16.55) status = "الآن: الختام";
-    else status = "انتهت الندوة";
-
-    statusText.innerText = status;
-    statusPopup.style.display = "flex";
-  }
-
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-
-  updateLiveStatus();
-  setInterval(updateLiveStatus, 60000);
-});
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  const statusPopup = document.getElementById("statusPopup");
-  const closeBtn = document.getElementById("closePopupBtn");
-
-  closeBtn.addEventListener("click", () => {
-    statusPopup.style.display = "none";
-  });
-});
 
 
