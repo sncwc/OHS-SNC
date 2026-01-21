@@ -58,19 +58,16 @@ document.addEventListener("DOMContentLoaded", () => {
     countdownEl.innerText = `تبقّى ${days} يوم • ${hours} ساعة • ${minutes} دقيقة • ${seconds} ثانية`;
   }
 
-  // ===== تحديث حالة الرسالة =====
   function updateLiveStatus() {
     const now = new Date();
     const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 
     if (today < new Date(now.getFullYear(), now.getMonth(), 25)) {
-      // قبل يوم الحدث
       statusText.innerText = "ستبدأ التنبيهات الحية للبرنامج يوم 25، تأكدوا من متابعة التحديثات خلال الندوة";
       statusPopup.style.display = "flex";
       return;
     }
 
-    // يوم الحدث: تحديث حسب الوقت
     const time = now.getHours() + now.getMinutes() / 60;
     let status = "";
 
@@ -86,7 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
     statusPopup.style.display = "flex";
   }
 
-  // تشغيل التحديثات
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
@@ -94,7 +90,13 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(updateLiveStatus, 60000);
 });
 
-// دالة إغلاق الرسالة
-function closeStatus() {
-  document.getElementById("statusPopup").style.display = "none";
-}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const statusPopup = document.getElementById("statusPopup");
+  const closeBtn = document.getElementById("closePopupBtn");
+
+  closeBtn.addEventListener("click", () => {
+    statusPopup.style.display = "none";
+  });
+});
