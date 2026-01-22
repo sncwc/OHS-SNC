@@ -10,6 +10,26 @@ a { text-decoration:none; }
 .navbar ul { display:flex; gap:30px; list-style:none; }
 .navbar a { color:#fff; font-weight:600; }
 
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  gap: 20px; 
+  padding: 30px 80px;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+
+.logo-img {
+  height: 60px; 
+  object-fit: contain;
+
+}
+.council-logo {
+  height: 100px;  
+  width: auto; 
+}
 
 .hero { position:relative; height:100vh; display:flex; justify-content:center; align-items:center; text-align:center; background: url("images/img12.png") center/cover no-repeat; }
 .hero::after { content:""; position:absolute; inset:0; background: rgba(0,0,0,0.55); z-index:1; }
@@ -112,8 +132,7 @@ a { text-decoration:none; }
 .contact-info h3 { font-size:18px; margin-bottom:6px; }
 .contact-info .name { font-weight:700; font-size:20px;}
 .contact-info .phone { margin-top:10px; font-size:18px;}
-.btn { display:inline-block; margin-top:15px; padding:10px 26px; border-radius:30px; border:1px solid #fff; color:#fff; transition:0.3s;}
-.btn:hover { background:#fff; color:#000; }
+
 
 
 .social-card { display:flex; gap:30px; justify-content:center; padding:20px;}
@@ -244,31 +263,6 @@ a { text-decoration:none; }
   height: 100%; 
 }
 
-    .language-switcher {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      z-index: 999;
-      display: flex;
-      gap: 8px;
-      background: rgba(0,0,0,0.5);
-      padding: 6px 12px;
-      border-radius: 8px;
-    }
-    .lang-btn {
-      cursor: pointer;
-      padding: 6px 12px;
-      border: none;
-      border-radius: 6px;
-      font-weight: 600;
-      background: rgba(255,255,255,0.1);
-      color: #fff;
-      transition: 0.3s;
-    }
-    .lang-btn.active, .lang-btn:hover {
-      background: #01bd81;
-      color: #000;
-    }
       
 .agenda-card {
     background: rgba(255, 255, 255, 0.9); 
@@ -493,10 +487,7 @@ a { text-decoration:none; }
   }
 
 
-  .btn {
-    padding: 8px 20px;
-    font-size: 0.95rem;
-  }
+
 }
 
 @media (max-width: 480px) {
@@ -594,28 +585,9 @@ a { text-decoration:none; }
 
 
 
-.ilm-btn {
-  position: absolute;
-  left: 20px;
-  bottom: 20px;
-
-  background-color: #036d56; 
-  color: #ffffff;
-
-  padding: 10px 22px;
-  border-radius: 30px;
-
-  font-weight: 800;
-  font-size: 14px;
-
-  text-decoration: none;
-  transition: background-color 0.25s ease;
-}
 
 
-.ilm-btn:hover {
-  background-color: #1ab399;  
-}
+
 
 
 
@@ -678,15 +650,7 @@ a { text-decoration:none; }
 }
 
 
-.more-destinations-glass .btn {
-  padding: 10px 20px;
-  background-color: var(--green);
-  color: #ffffff;
-  font-weight: 700;
-  border-radius: 25px;
-  text-decoration: none;
-  transition: 0.3s;
-}
+
 
 .more-destinations-glass .btn:hover {
   background-color: #036d56; 
@@ -743,17 +707,7 @@ a { text-decoration:none; }
   line-height: 1.6;
 }
 
-.more-destinations-glass .btn {
-  margin-top: 12px;
-  padding: 8px 16px;
-  background-color: hsl;
-  color: #fff;
-  font-weight: bold;
-  border-radius: 8px;
-  text-decoration: none;
-  display: inline-block;
-  transition: background-color 0.3s;
-}
+
 
 .more-destinations-glass .btn:hover {
   background-color: #1ab399;
@@ -800,7 +754,7 @@ a { text-decoration:none; }
   background: rgba(1,189,129,0.22);
   backdrop-filter: blur(14px);
   border-radius: 14px;
-  border: 1px solid rgba(1,189,129,0.6);
+  border: 1px solid #01bd8199;
   font-weight: 800;
   color: #ffffff;
   box-shadow: 0 8px 22px rgba(1,189,129,0.4);
@@ -814,3 +768,53 @@ a { text-decoration:none; }
   cursor: pointer;
 }
 
+
+/* ========== الأزرار الموحدة ========== */
+.btn,
+.ilm-btn,
+.more-destinations-glass .btn {
+  display: inline-block;       /* حجم طبيعي حسب النص */
+  width: auto;                 /* لا يمتد على طول الحاوية */
+  max-width: fit-content;      /* يقتصر على النص فقط */
+  white-space: nowrap;         /* يمنع كسر النص */
+  padding: 10px 22px;          /* مسافة داخل الزر */
+  font-size: 14px;             /* حجم الخط */
+  font-weight: 700;            /* سمك الخط */
+  text-align: center;
+  color: #fff;                 /* لون النص */
+  background-color: #01bd81;   /* لون الخلفية الأساسي */
+  border-radius: 30px;         /* حواف مستديرة */
+  border: none;                /* إزالة أي حدود */
+  text-decoration: none;       /* إزالة خط تحت النص */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  position: relative;          /* يحافظ على موضع الزر */
+  z-index: 5;
+}
+
+.btn:hover,
+.ilm-btn:hover,
+.more-destinations-glass .btn:hover {
+  background-color: #038d63;   /* تغيير اللون عند المرور */
+  transform: scale(1.05);      /* تأثير خفيف على المرور */
+}
+
+/* زر فوق الصور بشكل محدد */
+.ilm-image .ilm-btn {
+  position: absolute;          /* يبقى فوق الصورة */
+  bottom: 15px;                
+  right: 15px;
+}
+
+/* زر أكثر الوجهات */
+.more-destinations-glass .btn {
+  margin-top: 12px;
+  padding: 10px 20px;
+  border-radius: 25px;
+}
+
+/* زر داخل محتوى النص */
+.ilm-content .ilm-btn {
+  margin-top: 15px;
+  padding: 10px 22px;
+}
