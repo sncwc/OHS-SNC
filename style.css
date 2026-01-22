@@ -783,43 +783,23 @@ agenda-card:hover {
   box-shadow: 0 6px 18px rgba(1,189,129,0.35);
 }
 
-.conference-image {
-  position: relative;
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-.conference-image img {
-  width: 100%;
-  display: block;
-  border-radius: 16px;
-}
-
-.overlay-buttons {
+.agenda-btn {
   position: absolute;
-  right: 20px;   
-  display: flex;
-  gap: 12px;
-  z-index: 10;    
-}
-
-.overlay-btn {
-  padding: 10px 18px;
-  background: rgba(0,0,0,0.65);
-  color: #fff;
-  text-decoration: none;
-  border-radius: 8px;
+  right: 20px;  
+  bottom: 20px;
+  
+  background-color: #036d56;  
+  color: #ffffff;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-weight: 800;
   font-size: 14px;
-  font-weight: 600;
-  transition: 0.3s ease;
+  text-decoration: none;
+  transition: background-color 0.25s ease;
 }
 
-.overlay-btn.agenda {
-  background: #1e7f5c;  /* أخضر للأجندة */
-}
-
-.overlay-btn:hover {
-  background: rgba(0,0,0,0.85);
+.agenda-btn:hover {
+  background-color: #1ab399; 
 }
 
 
