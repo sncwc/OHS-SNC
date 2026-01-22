@@ -783,26 +783,6 @@ agenda-card:hover {
   box-shadow: 0 6px 18px rgba(1,189,129,0.35);
 }
 
-.agenda-btn {
-  position: absolute;
-  right: 20px;  
-  bottom: 20px;
-  
-  background-color: #036d56;  
-  color: #ffffff;
-  padding: 10px 22px;
-  border-radius: 30px;
-  font-weight: 800;
-  font-size: 14px;
-  text-decoration: none;
-  transition: background-color 0.25s ease;
-}
-
-.agenda-btn:hover {
-  background-color: #1ab399; 
-}
-
-
 
 
 
