@@ -132,7 +132,8 @@ a { text-decoration:none; }
 .contact-info h3 { font-size:18px; margin-bottom:6px; }
 .contact-info .name { font-weight:700; font-size:20px;}
 .contact-info .phone { margin-top:10px; font-size:18px;}
-
+.btn { display:inline-block; margin-top:15px; padding:10px 26px; border-radius:30px; border:1px solid #fff; color:#fff; transition:0.3s;}
+.btn:hover { background:#fff; color:#000; }
 
 
 .social-card { display:flex; gap:30px; justify-content:center; padding:20px;}
@@ -262,6 +263,19 @@ a { text-decoration:none; }
   margin: 0;
   height: 100%; 
 }
+
+    .language-switcher {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 999;
+      display: flex;
+      gap: 8px;
+      background: rgba(0,0,0,0.5);
+      padding: 6px 12px;
+      border-radius: 8px;
+    }
+
 
       
 .agenda-card {
@@ -796,24 +810,24 @@ a { text-decoration:none; }
 .ilm-btn:hover,
 .more-destinations-glass .btn:hover {
   background-color: #038d63;   /* تغيير اللون عند المرور */
-  transform: scale(1.05);      /* تأثير خفيف على المرور */
+  transform: scale(1.05);      
 }
 
-/* زر فوق الصور بشكل محدد */
+
 .ilm-image .ilm-btn {
-  position: absolute;          /* يبقى فوق الصورة */
+  position: absolute;        
   bottom: 15px;                
   right: 15px;
 }
 
-/* زر أكثر الوجهات */
+
 .more-destinations-glass .btn {
   margin-top: 12px;
   padding: 10px 20px;
   border-radius: 25px;
 }
 
-/* زر داخل محتوى النص */
+
 .ilm-content .ilm-btn {
   margin-top: 15px;
   padding: 10px 22px;
